@@ -11,29 +11,29 @@ using namespace std;
 class Tokenizer{
 
     private:
-		ifstream file;
+	ifstream file;
         string filename;
-		string token;
+	string token;
 
         int lineNumber, columnNumber;
         int pointer;
 		
-		vector<pair<State, History >> actualTransition, nextTransition;
+	vector<pair<State, History >> actualTransition, nextTransition;
         DFA dfa;
 
     public:
         Tokenizer(string);
-		~Tokenizer();
-		vector<pair<int, int>> tokenize();
+	~Tokenizer();
+	vector<pair<int, int>> tokenize();
 
-		void resetTokenizer();
-		void openFile();
+	void resetTokenizer();
+	void openFile();
         void prepare();
 
-	private:
-		void showToken(pair<State, History>, string);
-		bool mustShowToken(State);
-		string validate(string);
+    private:
+	void showToken(pair<State, History>, string);
+	bool mustShowToken(State);
+	string validate(string);
 };
 
 #endif
