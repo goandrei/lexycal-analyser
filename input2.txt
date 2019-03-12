@@ -1,0 +1,27 @@
+		if(a < b){
+			aux = a;
+			a = b;
+			b = aux;
+		}else{
+			cout << "input ok";
+		}
+	
+/*		while(a <= b){
+			b -= a;
+		}
+
+		if(b == 0){
+			cout << "a divide b";
+		}else{
+			cout << "a nu  divide b";
+		}
+	}else{
+		if(b % a){
+			cout << "a nu divide b";
+		}else{
+			cout << "a divide b";
+		}
+	}
+
+	return 0;
+}*/ 
