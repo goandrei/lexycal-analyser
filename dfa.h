@@ -11,9 +11,9 @@
 using namespace std;
 
 enum History{
-    DIGIT_BEFORE,
-    EQUAL_BEFORE,
-    SLASH_BEFORE,
+	DIGIT_BEFORE,
+	EQUAL_BEFORE,
+	SLASH_BEFORE,
 	QUOTE_BEFORE,
 	ARITHMETIC_BEFORE,
 	RELATIONAL_BEFORE,
@@ -35,40 +35,40 @@ enum History{
 	ENDLINE_BEFORE,
 	DOT_BEFORE,
 	SEPARATOR_BEFORE,
-    VAR_CHAR, //variable character
+	VAR_CHAR, //variable character
 	NON_VAR_CHAR,
 	NON_OPERATOR,
 	NON_DIGIT,
 	NON_QUOTE,
 	NON_STAR,
-    NONE
+	NONE
 };
 
 enum State{
-    INTEGER,
-    FLOAT,
-    COMMENT,
-    OPERATOR,
-    GROUP_OPERATOR,
-    KEYWORD,
+	INTEGER,
+	FLOAT,
+	COMMENT,
+	OPERATOR,
+	GROUP_OPERATOR,
+	KEYWORD,
 	CHAR,
-    STRING,
-    VARIABLE,
-    QUOTE_FIRST,
-    FIRST_SLASH,
+	STRING,
+	VARIABLE,
+	QUOTE_FIRST,
+	FIRST_SLASH,
 	ASSIGNMENT,
 	IO,
 	BRACKET,
-    SECOND_START,
+	SECOND_START,
 	DOUBLE_ARITHMETIC,
 	DOUBLE_RELATIONAL,
 	ARITHMETIC_OPERATOR,
 	RELATIONAL_OPERATOR,
 	IDENTIFIER,
 	SEPARATOR,
-    NEWLINE,
-    START,
-    END,
+	NEWLINE,
+	START,
+	END,
 	STATE_COUNT
 };
 
@@ -87,27 +87,27 @@ class DFA{
         vector<string> keywords;
 
     public:
-		DFA();
+	DFA();
 
-		void run(char, char, vector<pair<State, History>>&, State, History);
-		void initialize();
-		string stateMapper(State, string);
+	void run(char, char, vector<pair<State, History>>&, State, History);
+	void initialize();
+	string stateMapper(State, string);
 
-	private:
+    private:
         void initializeStart();
         void initializeFloat();
         void initializeComment();
         void initializeOperator();
-		void initializeString();
-		void initializeIdentifier();
+	void initializeString();
+	void initializeIdentifier();
         void initializeInteger();
-		void initializeChar();
-		void initializeSeparator();
-		void initializeBracket();
-		void initializeIO();
+	void initializeChar();
+	void initializeSeparator();
+	void initializeBracket();
+	void initializeIO();
 
-		bool isValidTransition(History, char, char);
-		bool contains(string, char);
+	bool isValidTransition(History, char, char);
+	bool contains(string, char);
 }; 
 
 #endif
