@@ -17,7 +17,7 @@ int main(){
 
 	string filename = "in.txt";
 
-    Tokenizer tokenizer(filename);
+    	Tokenizer tokenizer(filename);
 	vector<pair<int, int>> mapping = tokenizer.tokenize();
 	
 	cout << "\nTokenizer has finished!\n\n";
